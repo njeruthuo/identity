@@ -38,8 +38,12 @@ export function Contact() {
           }}
         >
           <div className="contact__form-row">
-            <Input label="Name" placeholder="Ada Lovelace" />
-            <Input label="Email" type="email" placeholder="you@example.com" />
+            <Input label="Name" placeholder="E.g Your Name" />
+            <Input
+              label="Email"
+              type="email"
+              placeholder="E.g you@example.com"
+            />
           </div>
           <Textarea label="Message" placeholder="What are you building?" />
           {sent ? (

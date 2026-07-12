@@ -5,8 +5,8 @@ import { Button } from "../components/Button.tsx";
 import { AboutProps } from "../types.ts";
 
 const stats: [string, string][] = [
-  ["5+", "years shipping"],
-  ["30+", "projects delivered"],
+  ["3+", "years shipping"],
+  ["15+", "projects delivered"],
   ["60%", "fastest perf win"],
 ];
 
@@ -42,9 +42,8 @@ export function About({ onNavigate }: AboutProps) {
             I care about the 200ms between click and paint.
           </p>
           <p style={{ margin: 0, color: "var(--ink-2)", maxWidth: 560 }}>
-            Recently: led the interface rebuild for a fintech dashboard (60%
-            faster loads), shipped a CRDT-synced notes app solo, and maintain a
-            small open-source component library.
+            Recently: leading the reavamp of Bluetrax UI and user experience
+            enhancement.
           </p>
           <div className="stats">
             {stats.map(([n, l]) => (
@@ -58,7 +57,12 @@ export function About({ onNavigate }: AboutProps) {
             <Button icon={Mail} onClick={() => onNavigate?.("Contact")}>
               Get in touch
             </Button>
-            <Button variant="secondary" icon={FileText}>
+            <Button
+              variant="secondary"
+              icon={FileText}
+              href="/docs/myCV.pdf"
+              download="Julius-Njeru-CV.pdf"
+            >
               Download CV
             </Button>
           </div>
