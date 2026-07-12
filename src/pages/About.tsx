@@ -1,15 +1,19 @@
 import { Mail, FileText } from 'lucide-react';
-import { SectionLabel } from '../components/SectionLabel.jsx';
-import { Tag } from '../components/Tag.jsx';
-import { Button } from '../components/Button.jsx';
+import { SectionLabel } from '../components/SectionLabel.tsx';
+import { Tag } from '../components/Tag.tsx';
+import { Button } from '../components/Button.tsx';
 
-const stats = [
+const stats: [string, string][] = [
   ['5+', 'years shipping'],
   ['30+', 'projects delivered'],
   ['60%', 'fastest perf win'],
 ];
 
-export function About({ onNavigate }) {
+type AboutProps = {
+  onNavigate?: (page: string) => void;
+};
+
+export function About({ onNavigate }: AboutProps) {
   return (
     <main className="container">
       <div className="about">

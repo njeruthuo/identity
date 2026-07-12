@@ -1,4 +1,9 @@
-export function CodeBlock({ filename = 'snippet.tsx', code = '' }) {
+type CodeBlockProps = {
+  filename?: string;
+  code?: string;
+};
+
+export function CodeBlock({ filename = 'snippet.tsx', code = '' }: CodeBlockProps) {
   const lines = String(code).split('\n');
   return (
     <div className="code-block">

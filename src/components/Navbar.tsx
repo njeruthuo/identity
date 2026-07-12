@@ -1,10 +1,27 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from './Button.jsx';
+import { Button } from './Button.tsx';
 
-export function Navbar({ name = 'julius.njeru', links = ['Work', 'About', 'Contact'], active, onNavigate, cta = 'Get in touch' }) {
+type NavbarProps = {
+  name?: string;
+  links?: string[];
+  active?: string;
+  onNavigate?: (page: string) => void;
+  cta?: string;
+};
+
+export function Navbar({
+  name = 'julius.njeru',
+  links = ['Work', 'About', 'Contact'],
+  active,
+  onNavigate,
+  cta = 'Get in touch',
+}: NavbarProps) {
   const [open, setOpen] = useState(false);
-  const go = (l) => { setOpen(false); onNavigate?.(l); };
+  const go = (l: string) => {
+    setOpen(false);
+    onNavigate?.(l);
+  };
   return (
     <div className="navbar__wrap">
       <nav className="navbar">

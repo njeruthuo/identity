@@ -1,8 +1,22 @@
+import type { ComponentType } from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import { IconButton } from './IconButton.jsx';
+import type { LucideProps } from 'lucide-react';
+import { IconButton } from './IconButton.tsx';
 
-export function Footer({ name = 'your.name', email = 'hello@yourname.dev', socials }) {
-  const items = socials || [
+type Social = {
+  icon: ComponentType<LucideProps>;
+  label: string;
+  href: string;
+};
+
+type FooterProps = {
+  name?: string;
+  email?: string;
+  socials?: Social[];
+};
+
+export function Footer({ name = 'your.name', email = 'hello@yourname.dev', socials }: FooterProps) {
+  const items: Social[] = socials || [
     { icon: Github, label: 'GitHub', href: 'https://github.com/njeruthuo' },
     { icon: Linkedin, label: 'LinkedIn', href: '#' },
     { icon: Mail, label: 'Email', href: 'mailto:' + email },

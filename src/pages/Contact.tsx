@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { SectionLabel } from '../components/SectionLabel.jsx';
-import { Input, Textarea } from '../components/Input.jsx';
-import { Button } from '../components/Button.jsx';
-import { IconButton } from '../components/IconButton.jsx';
-import { Tag } from '../components/Tag.jsx';
+import { SectionLabel } from '../components/SectionLabel.tsx';
+import { Input, Textarea } from '../components/Input.tsx';
+import { Button } from '../components/Button.tsx';
+import { IconButton } from '../components/IconButton.tsx';
+import { Tag } from '../components/Tag.tsx';
 
 export function Contact() {
   const [sent, setSent] = useState(false);
