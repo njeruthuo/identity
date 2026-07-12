@@ -1,10 +1,10 @@
-type CodeBlockProps = {
-  filename?: string;
-  code?: string;
-};
+import { CodeBlockProps } from "../types";
 
-export function CodeBlock({ filename = 'snippet.tsx', code = '' }: CodeBlockProps) {
-  const lines = String(code).split('\n');
+export function CodeBlock({
+  filename = "snippet.tsx",
+  code = "",
+}: CodeBlockProps) {
+  const lines = String(code).split("\n");
   return (
     <div className="code-block">
       <div className="code-block__bar">
@@ -17,7 +17,7 @@ export function CodeBlock({ filename = 'snippet.tsx', code = '' }: CodeBlockProp
         {lines.map((ln, i) => (
           <div key={i} className="code-block__line">
             <span className="code-block__num">{i + 1}</span>
-            <span style={{ whiteSpace: 'pre' }}>{ln || ' '}</span>
+            <span style={{ whiteSpace: "pre" }}>{ln || " "}</span>
           </div>
         ))}
       </pre>

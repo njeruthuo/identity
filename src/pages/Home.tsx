@@ -1,11 +1,11 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "../components/Button.tsx";
-import { IconButton } from "../components/IconButton.tsx";
 import { Tag } from "../components/Tag.tsx";
 import { SectionLabel } from "../components/SectionLabel.tsx";
 import { ProjectCard } from "../components/ProjectCard.tsx";
-import type { Project } from "../components/ProjectCard.tsx";
 import { CodeBlock } from "../components/CodeBlock.tsx";
+import ContactsList from "../components/ContactsList.tsx";
+import { Project } from "../types.ts";
 
 const heroCode =
   'const engineer = {\n  focus: "frontend",\n  stack: ["react", "django",\n    "fastapi", "postgres"],\n  ships: true,\n};';
@@ -94,19 +94,7 @@ export function Home({ onNavigate }: HomeProps) {
               Get in touch
             </Button>
           </div>
-          <div className="socials">
-            <IconButton
-              icon={Github}
-              label="GitHub"
-              href="https://github.com/njeruthuo"
-            />
-            <IconButton icon={Linkedin} label="LinkedIn" href="#" />
-            <IconButton
-              icon={Mail}
-              label="Email"
-              href="mailto:juliusn411@gmail.com"
-            />
-          </div>
+          <ContactsList />
         </div>
         <CodeBlock filename="about-me.ts" code={heroCode} />
       </section>

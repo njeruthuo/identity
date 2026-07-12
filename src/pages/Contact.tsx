@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { SectionLabel } from '../components/SectionLabel.tsx';
-import { Input, Textarea } from '../components/Input.tsx';
-import { Button } from '../components/Button.tsx';
-import { IconButton } from '../components/IconButton.tsx';
-import { Tag } from '../components/Tag.tsx';
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { SectionLabel } from "../components/SectionLabel.tsx";
+import { Input, Textarea } from "../components/Input.tsx";
+import { Button } from "../components/Button.tsx";
+import { Tag } from "../components/Tag.tsx";
+import ContactsList from "../components/ContactsList.tsx";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -14,17 +14,29 @@ export function Contact() {
         <div className="stack-col">
           <SectionLabel index="04">Contact</SectionLabel>
           <h1 className="contact__title">Let's build something.</h1>
-          <p style={{ margin: 0, fontSize: 'var(--text-body-lg)', color: 'var(--ink-2)', maxWidth: 420 }}>
-            I reply within a day. Tell me what you're shipping and where the frontend hurts.
+          <p
+            style={{
+              margin: 0,
+              fontSize: "var(--text-body-lg)",
+              color: "var(--ink-2)",
+              maxWidth: 420,
+            }}
+          >
+            I reply within a day. Tell me what you're shipping and where the
+            frontend hurts.
           </p>
-          <div className="socials">
-            <IconButton icon={Github} label="GitHub" href="https://github.com/njeruthuo" />
-            <IconButton icon={Linkedin} label="LinkedIn" href="#" />
-            <IconButton icon={Mail} label="Email" href="mailto:juliusn411@gmail.com" />
+          <ContactsList />
+          <div>
+            <Tag tone="positive">Currently available</Tag>
           </div>
-          <div><Tag tone="positive">Currently available</Tag></div>
         </div>
-        <form className="contact__form" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+        <form
+          className="contact__form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSent(true);
+          }}
+        >
           <div className="contact__form-row">
             <Input label="Name" placeholder="Ada Lovelace" />
             <Input label="Email" type="email" placeholder="you@example.com" />
@@ -33,7 +45,9 @@ export function Contact() {
           {sent ? (
             <div className="contact__sent">Message sent — talk soon.</div>
           ) : (
-            <Button iconAfter={ArrowRight} style={{ alignSelf: 'flex-start' }}>Send message</Button>
+            <Button iconAfter={ArrowRight} style={{ alignSelf: "flex-start" }}>
+              Send message
+            </Button>
           )}
         </form>
       </div>

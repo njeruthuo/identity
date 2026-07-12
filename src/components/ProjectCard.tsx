@@ -1,30 +1,24 @@
-import { ArrowUpRight } from 'lucide-react';
-import { Tag } from './Tag.tsx';
-
-export type Project = {
-  title: string;
-  blurb?: string;
-  tags?: string[];
-  image?: string;
-  imageLabel?: string;
-  href?: string;
-};
+import { ArrowUpRight } from "lucide-react";
+import { Tag } from "./Tag.tsx";
+import { Project } from "../types.ts";
 
 export function ProjectCard({
   title,
   blurb,
   tags = [],
   image,
-  imageLabel = 'project shot',
-  href = '#',
+  imageLabel = "project shot",
+  href = "#",
 }: Project) {
   return (
     <a className="project-card" href={href}>
       <div
         className="project-card__media"
-        style={image ? { backgroundImage: 'url(' + image + ')' } : undefined}
+        style={image ? { backgroundImage: "url(" + image + ")" } : undefined}
       >
-        {!image && <span className="project-card__media-label">{imageLabel}</span>}
+        {!image && (
+          <span className="project-card__media-label">{imageLabel}</span>
+        )}
       </div>
       <div className="project-card__body">
         <div className="project-card__title-row">

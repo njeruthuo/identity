@@ -1,14 +1,9 @@
-import type { ReactNode } from 'react';
-
-type SectionLabelProps = {
-  index?: string;
-  children: ReactNode;
-};
+import { SectionLabelProps } from "../types";
 
 export function SectionLabel({ index, children }: SectionLabelProps) {
   return (
     <div className="section-label">
-      <span className="section-label__index">{index ? index + ' /' : '/'}</span>
+      <span className="section-label__index">{index ? index + " /" : "/"}</span>
       <span className="section-label__text">{children}</span>
       <span className="section-label__rule" />
     </div>

@@ -1,8 +1,5 @@
-import type { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
-
-type InputProps = {
-  label?: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+import type { TextareaHTMLAttributes } from "react";
+import { InputProps } from "../types";
 
 export function Input({ label, ...rest }: InputProps) {
   return (
