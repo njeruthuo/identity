@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juliusnjeruthuo.vercel.app/sitemap.xml
