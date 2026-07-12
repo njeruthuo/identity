@@ -17,9 +17,13 @@ type FooterProps = {
 
 export function Footer({ name = 'your.name', email = 'hello@yourname.dev', socials }: FooterProps) {
   const items: Social[] = socials || [
-    { icon: Github, label: 'GitHub', href: 'https://github.com/njeruthuo' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Mail, label: 'Email', href: 'mailto:' + email },
+    { icon: Github, label: "GitHub", href: "https://github.com/njeruthuo" },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/juliusnjeruthuo",
+    },
+    { icon: Mail, label: "Email", href: "mailto:" + email },
   ];
   return (
     <footer className="footer">
