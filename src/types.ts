@@ -79,3 +79,7 @@ export type SectionLabelProps = {
   index?: string;
   children: ReactNode;
 };
+
+export type HomeProps = {
+  onNavigate?: (page: string) => void;
+};

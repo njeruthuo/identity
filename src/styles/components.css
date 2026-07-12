@@ -453,6 +453,7 @@ textarea.field__input {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
+  min-width: 0;
 }
 .row {
   display: flex;
@@ -484,7 +485,7 @@ textarea.field__input {
 /* About */
 .about {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 380px minmax(0, 1fr);
   gap: var(--space-8);
   align-items: start;
   padding: var(--space-8) 0 var(--space-9);
@@ -608,7 +609,7 @@ textarea.field__input {
     gap: var(--space-4);
   }
   .about {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
   }
 }
 @media (max-width: 900px) {
@@ -629,7 +630,8 @@ textarea.field__input {
     grid-template-columns: 1fr;
   }
   .stats {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
   }
   .navbar__links {
     display: none;
@@ -648,6 +650,12 @@ textarea.field__input {
   .about__title,
   .contact__title {
     font-size: var(--text-h2);
+  }
+  .stat {
+    padding: 12px 10px;
+  }
+  .stat__number {
+    font-size: 22px;
   }
   .section {
     padding-bottom: var(--space-8);

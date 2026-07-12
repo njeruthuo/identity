@@ -5,64 +5,17 @@ import { SectionLabel } from "../components/SectionLabel.tsx";
 import { ProjectCard } from "../components/ProjectCard.tsx";
 import { CodeBlock } from "../components/CodeBlock.tsx";
 import ContactsList from "../components/ContactsList.tsx";
-import { Project } from "../types.ts";
-
-const heroCode =
-  'const engineer = {\n  focus: "frontend",\n  stack: ["react", "django",\n    "fastapi", "postgres"],\n  ships: true,\n};';
-
-const projects: Project[] = [
-  {
-    title: "Bluetrax",
-    blurb:
-      "Fleet tracking system — live vehicle telemetry, geofencing and trip history for fleet operators.",
-    tags: ["React", "Django", "PostgreSQL"],
-    image: "/images/BLUETRAX.png",
-    href: "https://bluetrax.co.ke",
-  },
-  {
-    title: "TMS",
-    blurb:
-      "Logistics operations management — dispatch, orders and fleet workflows in one console.",
-    tags: ["React", "FastAPI", "Redis"],
-    image: "/images/TMS.png",
-    href: "https://tms.bluetrax.co.ke",
-  },
-  {
-    title: "Kollatix",
-    blurb:
-      "Risk assessment engine for commercial lenders managing tracked assets.",
-    tags: ["TypeScript", "Django", "MySQL"],
-    image: "/images/KOLLATIX.png",
-    href: "https://app.kollatix.com",
-  },
-  {
-    title: "Rhinocharge Leaderboard",
-    blurb:
-      "Live rally leaderboard for the Rhino Charge — raising funds to protect endangered species in Kenya.",
-    tags: ["React", "Tailwind", "Docker"],
-    image: "/images/LEADERBOARD.png",
-    href: "https://rhinocharge-leaderboard.bluetrax.co.ke",
-  },
-];
-
-const stack = [
-  "React",
-  "React Native",
-  "TypeScript",
-  "Django",
-  "FastAPI",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "MySQL",
-  "Redis",
-  "Docker",
-];
-
-type HomeProps = {
-  onNavigate?: (page: string) => void;
-};
+import { HomeProps } from "../types.ts";
+import { heroCode, projects, stack } from "../data.ts";
 
 export function Home({ onNavigate }: HomeProps) {
+  const handleScrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <main className="container">
       <section className="hero">
@@ -89,7 +42,7 @@ export function Home({ onNavigate }: HomeProps) {
             <Button
               size="lg"
               variant="secondary"
-              onClick={() => onNavigate?.("Contact")}
+              onClick={handleScrollToContact}
             >
               Get in touch
             </Button>
@@ -101,7 +54,7 @@ export function Home({ onNavigate }: HomeProps) {
 
       <section className="section">
         <SectionLabel index="01">Selected work</SectionLabel>
-        <div className="work-grid">
+        <div id="project-section" className="work-grid">
           {projects.map((p) => (
             <ProjectCard key={p.title} {...p} />
           ))}

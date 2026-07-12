@@ -78,6 +78,17 @@
   --dur-slow: 400ms;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  overflow-x: clip; /* kill horizontal scroll without breaking sticky nav */
+}
+
+html {
+  /* offset scrollIntoView / anchor jumps so targets clear the 66px sticky navbar */
+  scroll-padding-top: 88px;
+}
+
 body {
   margin: 0;
   background: var(--bg-page);
@@ -87,6 +98,8 @@ body {
   line-height: var(--leading-body);
   -webkit-font-smoothing: antialiased;
 }
+
+img { max-width: 100%; height: auto; }
 a { color: var(--accent-ink); text-decoration: none; transition: color var(--dur-fast) var(--ease-out); }
 a:hover { color: var(--accent); }
 ::selection { background: var(--accent-soft); color: var(--accent-ink); }

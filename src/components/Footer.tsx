@@ -7,7 +7,7 @@ export function Footer({
   email = "hello@yourname.dev",
 }: FooterProps) {
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="footer__inner">
         <div className="footer__kicker">Next project?</div>
         <a target="_blank" className="footer__cta" href={"mailto:" + email}>
