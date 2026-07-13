@@ -37,7 +37,7 @@ export function About({ onNavigate }: AboutProps) {
               maxWidth: 560,
             }}
           >
-            I've spent the last five years building products end to end — APIs,
+            I've spent the last three years building products end to end — APIs,
             data models, deploys — but the frontend is where I do my best work.
             I care about the 200ms between click and paint.
           </p>
